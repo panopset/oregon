@@ -32,3 +32,12 @@ We'll make it easy to exploit, by not validating fields, and logging whatever is
 
 Now that we have a vulnerable server, let's set up the vaccination servers.
 
+We'll need a [pre-8.121 JDK](https://www.oracle.com/java/technologies/javase/8u121-relnotes.html), say
+8.112, found [here](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
+
+Still not able to [exploit](https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot).
+
+We'll need to [update](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j) the default logging in Spring.
+
+
+
