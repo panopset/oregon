@@ -67,4 +67,9 @@ We'll need to [update](https://docs.spring.io/spring-boot/docs/current/reference
     Setting FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS value to True, current value is false
 
 
+Breakpoint at org.apache.logging.log4j.core.lookup.Interpolator.lookup seems to be where the offending substitution occurs, while performing the MessagePatternConverter.
+
+Setting the JDK 8.121 or better causes the JVM to do some verification, and returns "foo" instead of executing the specified code.
+
+
 

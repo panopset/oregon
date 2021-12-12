@@ -1,5 +1,6 @@
 package com.panopset.ashland;
 
+import org.apache.logging.log4j.core.pattern.FormattingInfo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,8 @@ public class App {
 
 		// Turns out this makes no difference:
 		// System.setProperty(Props.LOG_MANAGER, "org.apache.logging.log4j.jul.LogManager");
+		
+		
 
 		SpringApplication.run(App.class, args);
 	}
