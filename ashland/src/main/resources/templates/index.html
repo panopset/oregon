@@ -5,14 +5,19 @@
  <title>Ashland Vulnerable Server</title>
 </head><body>
 
-<form method="get" action="/index">
+<form method="get" action="/index">	
  <label for="insec">Some data:</label>
  <input type="text" id="insec" name="insec">
  <input type="submit" value="Submit">
 <form>
 
+<h1>Relevant Server System Properties</h1>
 <p>
-The current value of the server log4j2.formatMsgNoLookups is: <span th:text="${l4jfmnl}">Unknown</span>.
+java.util.logging.manager is: <span th:text="${logmgr}">Unknown</span>.
+</p>
+
+<p>
+log4j2.formatMsgNoLookups is: <span th:text="${l4jfmnl}">Unknown</span>.
 </p>
 
 </body></html>

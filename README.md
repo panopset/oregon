@@ -39,5 +39,32 @@ Still not able to [exploit](https://spring.io/blog/2021/12/10/log4j2-vulnerabili
 
 We'll need to [update](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j) the default logging in Spring.
 
+.... and that did the trick:
+
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+     :: Spring Boot ::                (v2.6.0)
+    
+    2021-12-12 09:30:37.577  INFO 18077 --- [           main] c.p.a.App                                : Starting App using Java 1.8.0_112 on pan000 with PID 18077 (/home/karl/w/oregon/ashland/target/classes     started by karl in /home/karl/w/oregon/ashland)
+    2021-12-12 09:30:37.583  INFO 18077 --- [           main] c.p.a.App                                : No active profile set, falling back to default profiles: default
+    2021-12-12 09:30:38.348  INFO 18077 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+    2021-12-12 09:30:38.362  INFO 18077 --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+    2021-12-12 09:30:38.362  INFO 18077 --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+    2021-12-12 09:30:38.406  INFO 18077 --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+    2021-12-12 09:30:38.406  INFO 18077 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 795 ms
+    2021-12-12 09:30:38.728  INFO 18077 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+    2021-12-12 09:30:38.862  INFO 18077 --- [           main] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint(s) beneath base path '/actuator'
+    2021-12-12 09:30:38.892  INFO 18077 --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+    2021-12-12 09:30:38.906  INFO 18077 --- [           main] c.p.a.App                                : Started App in 1.619 seconds (JVM running for 2.076)
+    2021-12-12 09:30:50.077  INFO 18077 --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+    2021-12-12 09:30:50.077  INFO 18077 --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+    2021-12-12 09:30:50.078  INFO 18077 --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+    Setting FORMAT_MESSAGES_PATTERN_DISABLE_LOOKUPS value to True, current value is false
+
 
 

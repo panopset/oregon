@@ -13,7 +13,8 @@ public class WebController {
 	@GetMapping({ "/", "/home", "/index", "/index.htm", "/index.html" })
 	public String home(Model model, HttpServletResponse response, @RequestParam(required = false) String insec) {
 		new VulnerableClass().processInsecureValue(insec);
-		model.addAttribute("l4jfmnl", System.getProperty("log4j2.formatMsgNoLookups"));
+		model.addAttribute("l4jfmnl", System.getProperty(Props.LOG4J_FORMAT_MSG_NO_LOOKUPS));
+		model.addAttribute("logmgr", System.getProperty(Props.LOG_MANAGER));
 		return "index";
 	}
 
