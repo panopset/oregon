@@ -4,11 +4,10 @@
 Copied from [Logout4Shell](https://github.com/Cybereason/Logout4Shell) on github.
 
 
+
     mvn clean install
     ./run.sh
     
-    cd target/class
-    run the webserver - python3 -m http.server 8888
 
 
 # Original README.md
