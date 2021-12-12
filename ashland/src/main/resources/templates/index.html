@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Ashland Vulnerable Server</title>
+</head><body>
+
+<form method="get" action="/index">
+ <label for="insec">Some data:</label>
+ <input type="text" id="insec" name="insec">
+ <input type="submit" value="Submit">
+<form>
+
+<p>
+The current value of the server log4j2.formatMsgNoLookups is: <span th:text="${l4jfmnl}">Unknown</span>.
+</p>
+
+</body></html>

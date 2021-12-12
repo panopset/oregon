@@ -4,13 +4,22 @@ Project to look at [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44
 
 ## Structure
 
-Naming convention for our servers will be Oregon cities.
+Naming convention for our stuff will be Oregon cities, we'll keep the names of copied code from cybereason and mbechler.
 
 * oregon Our parent project.
 * [ashland](ashland/README.md) Our vulnerable server.
-* [portland](portland/README.md) Our [Logout4Shell](https://github.com/Cybereason/Logout4Shell) vaccination server.
-* medford Our marshalsec server.
-* bend Our evil attack server.
+* [logout4shell](logout4shell/README.md) Copied [Logout4Shell](https://github.com/Cybereason/Logout4Shell) vaccination server.
+* [marshalsec](marshalsec/README.md) Copied marshalsec ldap server.
+
+
+
+## Immunize
+
+
+
+    ${jndi:ldap://localhost:1389/a}
+
+
 
 ## Narrative
 
