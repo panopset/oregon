@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Dropcash Capital Management</title>
+
+<style>
+h2 {
+ color: maroon;
+}
+b {
+ font-variant-caps: all-small-caps;
+ font-size: smaller;
+}
+body {
+ margin: 40px;
+ background-repeat: no-repeat;
+ font-size: larger;
+}
+</style>
+
+
+
+</head><body background="../../../../raw/images/elcbgd.png" th:background="@{/images/elcbgd.png}">
+
+<h1>DropcashCM</h1>
+
+<p>
+<b>Capital management for the new age.</b>
+</p>
+
+
+<form method="get" action="/logon">	
+ <label for="userid">Please log on to your account:</label>
+ <input type="text" placeholder="Account" id="userid" th:value="${userid}"/>
+ <input type="password" placeholder="Password" id="userpw"/>
+ <input type="submit" value="Submit"/>
+</form>
+
+<h2>
+<span th:text="${msg}"></span>
+</h2>
+
+<p>
+Standard brokerage, and cryptocurrency services for an exclusive clientele.
+</p>
+<p>
+<b>At Dropcash Capital Management, nobody knows you but us</b>.
+</p>
+
+<p>
+<span th:text="${downow}">server issues, please try again later</span>.
+</p>
+<p>
+(Updated every five minutes.)
+</p>
+</body></html>

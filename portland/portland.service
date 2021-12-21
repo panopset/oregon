@@ -1,0 +1,12 @@
+[Unit]
+Description=portland
+
+[Service]
+User=karl
+Type=simple
+ExecStart=/opt/java/jdk1.8.0_112/bin/java -jar /home/karl/portland.jar
+SuccesExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+

@@ -6,20 +6,31 @@ Project to look at [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44
 
 Naming convention for our stuff will be Oregon cities, we'll keep the names of copied code from cybereason and mbechler.
 
-* oregon Our parent project.
-* [ashland](ashland/README.md) Our vulnerable server.
+* oregon Our parent project. 
+
+
 * [logout4shell](logout4shell/README.md) Copied [Logout4Shell](https://github.com/Cybereason/Logout4Shell) vaccination server.
 * [marshalsec](marshalsec/README.md) Copied marshalsec ldap server.
 
 
+* [ashland](ashland/README.md) 8080 Our vulnerable server.
+* [compat](compat/README.md) Copy of what we need from the Panopset src/shoring/compat project.
+* [portland](portland/README.md) 8082 Honeypot, to capture info on attacks.
+* [medford](medford/README.md) 8081 Our test server, used to see if another server is vulnerable.
 
-## Immunize
 
+## Immunize String for the Ashland Server
 
 
     ${jndi:ldap://localhost:1389/a}
 
+You need to have the ashland, logout4shell and marshalsec servers running.
 
+
+## Honeypot scenario idea
+
+To test on your local system, you'll need the logout4shell, marshalsec, and portland servers running.
+You can use the medford server to perform an immunization on your portland server, or modify that to perform a simulated attack.
 
 ## Narrative
 
@@ -70,6 +81,9 @@ We'll need to [update](https://docs.spring.io/spring-boot/docs/current/reference
 Breakpoint at org.apache.logging.log4j.core.lookup.Interpolator.lookup seems to be where the offending substitution occurs, while performing the MessagePatternConverter.
 
 Setting the JDK 8.121 or better causes the JVM to do some verification, and returns "foo" instead of executing the specified code.
+
+Next, set up a scan server, to detect the vulnerability, call it medford,
+and a separate honeypot server to log exploitation attempts, call it portland.
 
 
 

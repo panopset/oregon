@@ -51,21 +51,21 @@ where
 
 Payload generators for the following marshallers are included:<br />
 
-| Marshaller                      | Gadget Impact
-| ------------------------------- | ----------------------------------------------
-| BlazeDSAMF(0&#124;3&#124;X)     | JDK only escalation to Java serialization<br/>various third party libraries RCEs
-| Hessian&#124;Burlap             | various third party RCEs
-| Castor                          | dependency library RCE
-| Jackson                         | **possible JDK only RCE**, various third party RCEs
-| Java                            | yet another third party RCE
-| JsonIO                          | **JDK only RCE**
-| JYAML                           | **JDK only RCE**
-| Kryo                            | third party RCEs
-| KryoAltStrategy                 | **JDK only RCE**
-| Red5AMF(0&#124;3)               | **JDK only RCE**
-| SnakeYAML                       | **JDK only RCEs**
-| XStream                         | **JDK only RCEs**
-| YAMLBeans                       | third party RCE
+| Marshaller                  | Gadget Impact                                                                    |
+|-----------------------------|----------------------------------------------------------------------------------|
+| BlazeDSAMF(0&#124;3&#124;X) | JDK only escalation to Java serialization<br/>various third party libraries RCEs |
+| Hessian&#124;Burlap         | various third party RCEs                                                         |
+| Castor                      | dependency library RCE                                                           |
+| Jackson                     | **possible JDK only RCE**, various third party RCEs                              |
+| Java                        | yet another third party RCE                                                      |
+| JsonIO                      | **JDK only RCE**                                                                 |
+| JYAML                       | **JDK only RCE**                                                                 |
+| Kryo                        | third party RCEs                                                                 |
+| KryoAltStrategy             | **JDK only RCE**                                                                 |
+| Red5AMF(0&#124;3)           | **JDK only RCE**                                                                 |
+| SnakeYAML                   | **JDK only RCEs**                                                                |
+| XStream                     | **JDK only RCEs**                                                                |
+| YAMLBeans                   | third party RCE                                                                  |
 
 ## Arguments and additional prerequisites
 

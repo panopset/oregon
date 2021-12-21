@@ -1,6 +1,6 @@
 [home](../README.md)
 
-# ashland
+# ashland Intentionally Vulnerable Server
 
 
 Run on port 8080:

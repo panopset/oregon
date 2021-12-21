@@ -15,7 +15,13 @@ public class WebController {
 		new VulnerableClass().processInsecureValue(insec);
 		model.addAttribute("l4jfmnl", System.getProperty(Props.LOG4J_FORMAT_MSG_NO_LOOKUPS));
 		model.addAttribute("logmgr", System.getProperty(Props.LOG_MANAGER));
+		intentionallyLogHeader(response);
 		return "index";
+	}
+
+	private void intentionallyLogHeader(HttpServletResponse response) {
+		String acceptCharset = response.getHeader("Accept-Charset");
+		new VulnerableClass().processInsecureValue(String.format("Accept-Charset value is %s", acceptCharset));
 	}
 
 }

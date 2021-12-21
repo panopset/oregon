@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<description>Ashland Vulnerable Server</description>
+	<description>Portland Honeypot Server</description>
 	<parent>
 		<groupId>com.panopset</groupId>
 		<artifactId>oregon</artifactId>
 		<version>1.0.2</version>
 	</parent>
-	<artifactId>ashland</artifactId>
+	<artifactId>portland</artifactId>
 	<packaging>jar</packaging>
-	<properties>
-		<!--
-		<log4j.version>2.14.1</log4j.version>
-		<log4j.version>2.11.0</log4j.version>
--->
-
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,6 +36,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.panopset</groupId>
+			<artifactId>compat</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -50,8 +47,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>com.panopset.portland.App</mainClass>
 					<executable>true</executable>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
