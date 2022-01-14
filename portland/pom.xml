@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.panopset</groupId>
 		<artifactId>oregon</artifactId>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 	</parent>
 	<artifactId>portland</artifactId>
 	<packaging>jar</packaging>
@@ -39,6 +39,14 @@
 		<dependency>
 			<groupId>com.panopset</groupId>
 			<artifactId>compat</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.panopset</groupId>
+			<artifactId>opspring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.panopset</groupId>
+			<artifactId>ophoneypot</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

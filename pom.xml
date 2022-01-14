@@ -4,17 +4,17 @@
 	<description>Oregon Project Parent</description>
 	<groupId>com.panopset</groupId>
 	<artifactId>oregon</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>8</java.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
 		<junit.version>5.8.1</junit.version>
-		<spring.version>2.6.0</spring.version>
-		<maven.compiler.version>2.3.2</maven.compiler.version>
+		<spring.version>2.6.2</spring.version>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
+		<panopset.version>1.0.9</panopset.version>
 	</properties>
 	<licenses>
 		<license>
@@ -23,7 +23,6 @@
 		</license>
 	</licenses>
 	<modules>
-		<module>compat</module>
 		<module>ashland</module>
 		<module>medford</module>
 		<module>logout4shell</module>
@@ -44,7 +43,17 @@
 			<dependency>
 				<groupId>com.panopset</groupId>
 				<artifactId>compat</artifactId>
-				<version>${project.version}</version>
+				<version>${panopset.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.panopset</groupId>
+				<artifactId>ophoneypot</artifactId>
+				<version>${panopset.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.panopset</groupId>
+				<artifactId>opspring</artifactId>
+				<version>${panopset.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

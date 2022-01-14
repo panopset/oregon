@@ -2,6 +2,18 @@
 
 Project to look at [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228).
 
+## Prerequisites
+
+* You'll need some of the Panopset projects (compat, ophoneypot, opmysql, and opspring), easiest way to get thim in your local repo is:
+
+
+
+    git clone github:/panopset/src
+    cd src/shoring
+    mvn install
+
+
+
 ## Structure
 
 Naming convention for our stuff will be Oregon cities, we'll keep the names of copied code from cybereason and mbechler.
@@ -14,7 +26,6 @@ Naming convention for our stuff will be Oregon cities, we'll keep the names of c
 
 
 * [ashland](ashland/README.md) 8080 Our vulnerable server.
-* [compat](compat/README.md) Copy of what we need from the Panopset src/shoring/compat project.
 * [portland](portland/README.md) 8082 Honeypot, to capture info on attacks.
 * [medford](medford/README.md) 8081 Our test server, used to see if another server is vulnerable.
 
@@ -84,6 +95,6 @@ Setting the JDK 8.121 or better causes the JVM to do some verification, and retu
 
 Next, set up a scan server, to detect the vulnerability, call it medford,
 and a separate honeypot server to log exploitation attempts, call it portland.
-
+... then record attack attempts into a database. 
 
 

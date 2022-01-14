@@ -8,13 +8,16 @@
     sudo vim /etc/profile
 
 
-and add the following lines:
+and add the following lines (PDBURL on the honeypot server as well):
 
 
 
     export PSVRNM=server name, as defined in your .ssh/config file.
     export PUSRNM=server user name.
     export PDNM=domain name assigned to server.
+    export PDBURL=<database URL:port (3306 if default mysql)>
+    export PDBUSR=<database user>
+    export PDBPWD=<database password>
 
 
 
@@ -134,7 +137,7 @@ On your server, install the service:
     sudo reboot 0
 
 
-Take a sip of whatever you are drinking to maintain your Ballmer Peak, then go back in there and make sure you see port 8082 and 443 active:
+Take a short break, then go back in there and make sure you see port 8082 and 443 active:
 
 
     ssh $PSVRNM
@@ -149,4 +152,36 @@ Take a sip of whatever you are drinking to maintain your Ballmer Peak, then go b
     
     
 [localhost:8082](http://localhost:8082)
+
+
+
+
+
+## Database
+
+
+[Set up a mysql database](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04), somewhere, in these instructions the database will be hosted on the same server as the honeypot.
+
+
+
+    sudo apt install mysql-server
+    sudo mysql_secure_installation
+    sudo mysql
+    CREATE USER '<PDBUSR value>'@'%' IDENTIFIED BY '<PDBPWD value>';
+    GRANT ALL PRIVILEGES on *.* TO '<PDBUSR value>'@'%' WITH GRANT OPTION;
+
+verify:
+
+
+    SELECT User, Host FROM mysql.user;
+    exit;
+    systemctl status mysql.service
+    sudo mysqladmin -p -u <PDBUSR value> version
+    sudo ufw allow mysql
+
+
+Edit /etc/mysql/mysql.conf.d/mysqld.cnf, and update the bind address, for example to allow any host to connect:
+
+
+    bind-address	= ::
 
