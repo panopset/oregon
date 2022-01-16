@@ -30,10 +30,10 @@ body {
 </p>
 
 
-<form method="get" action="/logon">	
+<form method="post" action="/logon">	
  <label for="userid">Please log on to your account:</label>
- <input type="text" placeholder="Account" id="userid" th:value="${userid}"/>
- <input type="password" placeholder="Password" id="userpw"/>
+ <input type="text" placeholder="Account" name="userid" id="userid" th:value="${userid}"/>
+ <input type="password" placeholder="Password" name="userpw" id="userpw"/>
  <input type="submit" value="Submit"/>
 </form>
 

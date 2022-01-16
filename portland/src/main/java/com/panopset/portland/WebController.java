@@ -16,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -45,7 +46,7 @@ public class WebController {
 		return INDEX;
 	}
 
-	@GetMapping({ "/logon" })
+	@PostMapping({ "/logon" })
 	public String logon(HttpServletRequest request, Model model, HttpServletResponse response,
 			@RequestParam(required = false) String userid, @RequestParam(required = false) String userpw,
 			@RequestHeader HttpHeaders headers) {
@@ -113,10 +114,13 @@ public class WebController {
 	}
 
 	private boolean isTheDroidsWereLookingFor(String value) {
-		return value.indexOf("dndi:ldap") > -1;
+		return value.indexOf("jndi:") > -1;
 	}
 
 	private void lookForAttacksInRequestParam(HttpServletRequest request, String name, String value) {
+		if (value == null) {
+			return;
+		}
 		lookForAttacks(request, "param", name, value);
 	}
 

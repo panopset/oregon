@@ -8,7 +8,7 @@
     sudo vim /etc/profile
 
 
-and add the following lines (PDBURL on the honeypot server as well):
+and add the following lines (PDB* on the honeypot server as well):
 
 
 
@@ -18,6 +18,10 @@ and add the following lines (PDBURL on the honeypot server as well):
     export PDBURL=<database URL:port (3306 if default mysql)>
     export PDBUSR=<database user>
     export PDBPWD=<database password>
+
+
+
+edit portland.service, replace karl with your user name.
 
 
 
@@ -31,7 +35,7 @@ Set up a digitalocean server with this user data:
 
     #!/bin/bash
     apt-get -y update
-    apt-get -y install nginx vim net-tools certbot python3-certbot-nginx openjdk-8-jre-headless default-jdk
+    apt-get -y install nginx vim net-tools certbot python3-certbot-nginx openjdk-17-jre-headless default-jdk
     apt-get -y upgrade
     ufw allow OpenSSH
     ufw allow 'Nginx Full'
@@ -124,10 +128,6 @@ Deploy your static content and your honeypot spring boot website:
     ./deploy.sh
     
     
-Put a [pre-8.121 JDK](https://www.oracle.com/java/technologies/javase/8u121-relnotes.html), say
-8.112, found [here](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html), 
-in /opt/java/ on the honeypot server.
-
 
 On your server, install the service:
 
