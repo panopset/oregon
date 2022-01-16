@@ -2,6 +2,12 @@
 
 # portland Honeypot Server
 
+## TODO:
+
+
+* Configure access log, see if that does a better job of getting the client IP.
+
+
 ## Define some environment variables on your local workstation
 
 
@@ -21,7 +27,7 @@ and add the following lines (PDB* on the honeypot server as well):
 
 
 
-edit portland.service, replace karl with your user name.
+edit portland.service, and replace <> with appropriate values.
 
 
 
@@ -131,10 +137,12 @@ Deploy your static content and your honeypot spring boot website:
 
 On your server, install the service:
 
+
     ssh $PSVRNM
     sudo mv portland.service /etc/systemd/system/
     sudo systemctl enable portland
     sudo reboot 0
+
 
 
 Take a short break, then go back in there and make sure you see port 8082 and 443 active:
